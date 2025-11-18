@@ -1,0 +1,59 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* === Couleurs et thème principal === */
+@layer base {
+  :root {
+    --background: 0 0% 100%;
+    --foreground: 240 10% 3.9%;
+    --card: 0 0% 100%;
+    --card-foreground: 240 10% 3.9%;
+    --popover: 0 0% 100%;
+    --popover-foreground: 240 10% 3.9%;
+    --primary: 142.1 76.2% 36.3%;
+    --primary-foreground: 355.7 100% 97.3%;
+    --secondary: 221.2 83.2% 53.3%;
+    --secondary-foreground: 0 0% 100%;
+    --muted: 240 4.8% 95.9%;
+    --muted-foreground: 240 3.8% 46.1%;
+    --accent: 142.1 76.2% 36.3%;
+    --accent-foreground: 0 0% 100%;
+    --destructive: 0 84.2% 60.2%;
+    --destructive-foreground: 0 0% 98%;
+    --border: 240 5.9% 90%;
+    --input: 240 5.9% 90%;
+    --ring: 142.1 76.2% 36.3%;
+    --radius: 0.5rem;
+  }
+
+  body {
+    @apply bg-background text-foreground;
+  }
+}
+
+/* === Styles de typographie === */
+@layer base {
+  h1, h2, h3, h4 {
+    @apply font-semibold text-gray-900;
+  }
+
+  p, label, input, button {
+    @apply text-gray-700;
+  }
+}
+
+/* === Amélioration visuelle === */
+@layer components {
+  .card {
+    @apply rounded-2xl shadow-lg bg-white border border-gray-100;
+  }
+
+  .btn-primary {
+    @apply bg-green-600 text-white font-medium px-4 py-2 rounded-lg hover:bg-green-700 transition-colors;
+  }
+
+  .btn-secondary {
+    @apply bg-blue-600 text-white font-medium px-4 py-2 rounded-lg hover:bg-blue-700 transition-colors;
+  }
+}
