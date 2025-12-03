@@ -1,0 +1,20 @@
+# Node-Image
+FROM node:20-alpine
+
+# Arbeitsverzeichnis im Container
+WORKDIR /app
+
+# Package-Dateien kopieren
+COPY package*.json ./
+
+# Dependencies installieren
+RUN npm install
+
+# Restliches Projekt kopieren
+COPY . .
+
+# Vite Port
+EXPOSE 5173
+
+# Vite Development Server starten, damit er von außen erreichbar ist
+CMD ["npm", "run", "dev", "--", "--host", "--port", "5173"]
